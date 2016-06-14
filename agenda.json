@@ -1,0 +1,139 @@
+[
+        {   
+
+            "date": "06 Mon",
+            "agenda": [
+                {
+                    "id": "1",
+                    "date": "06 Mon",
+                    "time": "15:00-16:30",
+                    "panel_title": "Tour of Narita Airport's new LCC Terminal 3",
+                    "location": "Tour begins at the North waiting area at Terminal 2",
+                    "info": "There will be a special tour of Narita Airport's new LCC terminal before and after the conference for interested participants. However, availability is limited so those interested are requested to register their place ASAP",
+                    "moderator": "",
+                    "speakers": [],
+                    "host": ""
+
+                },
+                {   
+                    "id": "1",
+                    "date": "06 Mon",
+                    "time": "18:30-20:30",
+                    "panel_title": "Welcome Reception",
+                    "location": "Sora Sky Lounge, Hilton Tokyo Narita Airport Hotel",
+                    "info": "Open to all attendees",
+                    "moderator": "",
+                    "speakers": [],
+                    "host": "images/logo/LCCs2016.png"
+                }
+                
+            ]
+        },
+        
+        
+        {
+
+            "date": "07 Tue",
+            "agenda": [
+                {
+                    "id":"2",
+                    "date": "07 Tue",
+                    "time": "08:30",
+                    "panel_title": "Registration",
+                    "location": "",
+                    "info": "",
+                    "moderator": "",
+                    "speakers": [],
+                    "host": ""
+                },
+                {
+                    "id": "2",
+                    "date": "07 Tue",
+                    "time": "09:30",
+                    "panel_title": "Opening remarks from the Chairman",
+                    "location": "",
+                    "info": "",
+                    "moderator": "",
+                    "speakers": [],
+                    "host": ""
+                },
+                {
+                    "id": "2",
+                    "date": "07 Tue",
+                    "time": "09:40",
+                    "panel_title": "Welcome address from Narita Airport",
+                    "location": "",
+                    "info": "",
+                    "moderator": "Narita Airport, President & CEO, Makoto Natsume",
+                    "speakers": [],
+                    "host": ""
+                }
+            ]
+
+        },      
+        
+        
+        {
+
+            "date": "08 Wed",
+            "agenda": [
+                { 
+                    "id":"3",
+                    "date": "08 Wed",
+                    "time": "08:15-09:15 ",
+                    "panel_title": "Pre-Conference Breakfast Briefing",
+                    "location": "Conference Ballroom (Royal Hall), Hilton Tokyo Narita Airport Hotel",
+                    "info": "Open to all attendees",
+                    "moderator": "Narita Airport, President & CEO, Makoto Natsume",
+                    "speakers": [],
+                    "host": "images/logo/LCCs2016.png"
+                },
+                {
+                    "id": "3",
+                    "date": "08 Wed",
+                    "time": "10:00",
+                    "panel_title": "Panel discussion: Opportunities for foreign LCCs flying into/from North Asia",
+                    "location": "",
+                    "info": "Long-haul opportunities to SE Asia, Nth America and Australia? Slots, traffic rights and other constraints",
+                    "moderator": "Narita Airport, President & CEO, Makoto Natsume",
+                    "speakers": [
+                        {
+                            "company": "AirAsia",
+                            "job_title": "Group Head of Risk",
+                            "name": " Attila Emam"
+                        },
+                        {
+                            "company": "Cebu Pacific",
+                            "job_title": "Former Chief Executive Advisor",
+                            "name": "Garry Kingshott"
+                        },
+                        {
+                            "company": "Cebu Pacific",
+                            "job_title": "Former Chief Executive Advisor",
+                            "name": "Garry Kingshott"
+                        },
+                        {
+                            "company": "",
+                            "job_title": "Experienced Airline Executive",
+                            "name": "Sandeep Bahl"
+                        },
+                        {
+                            "company": "Spring Airlines",
+                            "job_title": "Social Media Director",
+                            "name": "Jonathan Hutt"
+                        },
+                        {
+                            "company": "VietJet",
+                            "job_title": "Board Member",
+                            "name": "Chu Viet Cuong"
+                        }
+
+                   ],
+                    "host": ""
+                }  
+
+
+            ]
+        }
+        
+    ]

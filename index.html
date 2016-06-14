@@ -1,0 +1,96 @@
+<!doctype html>
+<html >
+<!-- manifest="manifest.appcache" -->
+  	<head>
+	    <!-- *******************************************************************
+	    These elements help the website integrate with supporting devices,
+	    making it behave more like a native application.
+	    ******************************************************************** -->
+
+	    <!-- Set the website's width to match the device's width and scale: -->
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	    <!-- Inform devices that this website is "mobile web app capable": -->
+	    <meta name="mobile-web-app-capable" content="yes" />
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+	    <!-- Some devices allow you to define the color of various parts of the
+	    user interface when your website is launched: -->
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	    <meta name="msapplication-TileColor" content="#0099cc" />
+	    <meta name="theme-color" content="#0099cc" />
+
+	    <!-- Define the website's name, which is often utilized when a visitor
+	    creates a home-screen icon for it: -->
+	    <meta name="application-name" content="My Event" />
+	    <meta name="apple-mobile-web-app-title" content="My Event" />
+
+	    <!-- Define an icon for a few specific devices, which are utilized when
+	    a visitor chooses to add your website to their home-screen: -->
+	    <meta name="msapplication-TileImage" content="/img/touch/ms-touch-icon-144x144-precomposed.png" />
+	    <link rel="apple-touch-icon" href="/img/touch/apple-touch-icon.png" />
+	    <link rel="icon" sizes="192x192" href="/img/touch/chrome-touch-icon-192x192.png" />
+
+	    
+	    <title>My Event</title>
+	    
+	    <!-- STYLES -->
+	    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,700,700italic' rel='stylesheet' type='text/css' async defer>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" async defer>
+	    <link rel="stylesheet" href="sass/bootstrap.min.css">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="js/jqueryui/jquery-ui.min.css">
+	    <!-- bxSlider CSS file -->
+		<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+	    <link rel="stylesheet" href="sass/main.css">
+	</head>
+  	<body data-ng-app="offlineDemo">
+  		<!-- APP WRAPPER -->
+    	<div id="wrapper" ng-controller = "MainController as main">
+    	<!-- HEADER -->
+    	<div class="header align_center" >
+      	<div class="page_title">{{title}}</div>
+      	<div id="menu_bgr">
+      		<div id="nav-icon">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+      	</div>
+    	</div>
+
+		<!-- MENU NAV -->
+      <div id="menu_curtain" style="display: none;">
+         <ul id="menu_list">
+	         <li class="row" ng-repeat="item in main.items">
+		         <a ng-click = "$parent.title = item.title" href="{{item.href}}">
+		            <div class="col-xs-2"><i class="{{item.icon}}" aria-hidden="true"></i></div>
+		            <div class="col-xs-6">{{item.title}}</div>
+		         </a>
+	         </li>
+         </ul>
+      </div>
+      <!-- End of menu navigation -->
+
+      <!-- VIEWS -->
+      <div data-ng-view></div>
+      
+    </div>
+    <!-- end of wrapper -->
+
+    <!-- SCRIPTS -->
+    <!--<script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jqueryui/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular-route/angular-route.js"></script>-->
+    <script type="text/javascript" src="js/js_core_libraries.js"></script>
+    <!-- bxSlider Javascript file -->
+	 <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/wave-a-flag/js.js"></script>
+  	</body>
+</html>

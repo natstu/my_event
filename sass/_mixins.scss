@@ -1,0 +1,258 @@
+// @file
+// Custom sass mixins
+
+// shorthand bp (breakpoint) media queries
+@mixin bp($point){
+ // "less than XS" mobile only (saves having to zero out properties on larger breakpoints)
+ @if $point == lt-xs {
+  @media only screen and (max-width: ($screenXS - 1)) {
+   @content;
+  }
+ }
+ @else if $point == lt-s {
+  @media only screen and (max-width: ($screenS - 1)) {
+   @content;
+  }
+ }
+ @else if $point == lt-m {
+  @media only screen and (max-width: ($screenM - 1)) {
+   @content;
+  }
+ }
+ @else if $point == lt-l {
+  @media only screen and (max-width: ($screenL - 1)) {
+   @content;
+  }
+ }
+ // Extra small devices (smart-phones from 480px)
+ @else if $point == xs {
+  @media only screen and (min-width: $screenXS) {
+   @content;
+  }
+ }
+
+ // Small devices (tablets, 768px and up)
+ @else if $point == s {
+  @media only screen and (min-width: $screenS) {
+   @content;
+  }
+ }
+ @else if $point == s-m {
+  @media only screen and (min-width: $screenS) and (max-width: $screenM) {
+   @content;
+  }
+ }
+ @else if $point == m {
+  // Medium devices (desktops, 992px and up)
+  @media only screen and (min-width: $screenM) {
+   @content;
+  }
+ }
+ @else if $point == m-l {
+  // Medium to Large only
+  @media only screen and (min-width: $screenM) and (max-width: $screenL) {
+   @content;
+  }
+ }
+ @else if $point == l {
+  // Large devices (large desktops, 1200px and up)
+  @media only screen and (min-width: $screenL) {
+   @content;
+  }
+ }
+ @else if $point == landscape {
+  @media only screen and (orientation:landscape) {
+   @content;
+  }
+ }
+ @else if $point == portrait {
+  @media only screen and (orientation:portrait) {
+   @content;
+  }
+ }
+ @else {
+  @media only screen and (min-width: $point) {
+   @content;
+  }
+ }
+}
+
+// mixin to attach SVG and fallback image via CSS background
+@mixin svg($svg, $fallback, $position: 0 0, $color: transparent, $repeat: no-repeat) {
+ background: url(#{$fallback}) $color $position $repeat;
+ background: none, url(#{$svg}) $color $position $repeat;
+}
+
+@mixin opacity($value){
+ $IEValue: $value * 100;
+ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+ filter: alpha(opacity=$IEValue);
+ -khtml-opacity: $value;
+ -webkit-opacity: $value;
+ -moz-opacity: $value;
+ opacity: $value;
+}
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin invis {
+ position: absolute !important;
+ height: 1px;
+ width: 1px;
+ overflow: hidden;
+ clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin vis {
+ position: static !important;
+ clip: auto;
+ height: auto;
+ width: auto;
+ overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+ @include invis;
+
+ &:active,
+ &:focus {
+  @include invis;
+ }
+}
+
+@mixin word-break(){
+ -ms-word-break: break-all;
+ word-break: break-all;
+ word-break: break-word;
+}
+
+// Helper mixin. Quicker outlines when debugging.
+@mixin outline($line-color: red,$line-style:dashed,$line-thickness:1px){
+ outline: $line-thickness $line-style $line-color;
+}
+
+//clear gradient
+@mixin nogradient(){
+ background: 0;
+ filter: none;
+}
+
+// vertical gradient
+@mixin gradient($from, $fromX, $to, $toX, $image: none) {
+ background: $from;
+ background-image: $image;
+ background: $image, -moz-linear-gradient(top, $from $fromX, $to $toX);
+ background: $image, -webkit-gradient(linear, left top, left bottom, color-stop($fromX, $from), color-stop($toX, $to));
+ background: $image, -webkit-linear-gradient(top, $from $fromX, $to $toX);
+ background: $image, -o-linear-gradient(top, $from $fromX, $to $toX);
+ background: $image, -ms-linear-gradient(top, $from $fromX, $to $toX);
+ background: $image, linear-gradient(to bottom, $from $fromX, $to $toX);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=0);
+}
+
+// horizontal gradient
+@mixin hgradient($from, $fromX, $to, $toX, $image: none) {
+ background: $from;
+ background-image: $image;
+ background: $image, -moz-linear-gradient(left, $from $fromX, $to $toX);
+ background: $image, -webkit-gradient(linear, left top, right top, color-stop($fromX, $from), color-stop($toX, $to));
+ background: $image, -webkit-linear-gradient(left, $from $fromX, $to $toX);
+ background: $image, -o-linear-gradient(left, $from $fromX, $to $toX);
+ background: $image, -ms-linear-gradient(left, $from $fromX, $to $toX);
+ background: $image, linear-gradient(to right, $from $fromX, $to $toX);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=1);
+}
+
+@mixin prefix($property, $value, $value2: null, $value3: null, $value4: null) {
+ -webkit-#{$property}: $value, $value2, $value3, $value4;
+ -moz-#{$property}: $value, $value2, $value3, $value4;
+ -ms-#{$property}: $value, $value2, $value3, $value4;
+ -o-#{$property}: $value, $value2, $value3, $value4;
+ #{$property}: $value, $value2, $value3, $value4;
+}
+
+@mixin background-size($xSize, $ySize: null){
+ -webkit-background-size: $xSize $ySize;
+ background-size: $xSize $ySize;
+}
+
+@mixin keyframes($name) {
+ @-webkit-keyframes #{$name} {
+  @content;
+ }
+ @-moz-keyframes #{$name} {
+  @content;
+ }  
+ @-ms-keyframes #{$name} {
+  @content;
+ }
+ @-o-keyframes #{$name} {
+  @content;
+ }  
+ @keyframes #{$name} {
+  @content;
+ }
+}
+
+@mixin animation($string) {
+ -webkit-animation: #{$string};
+ -moz-animation: #{$string};
+ -ms-animation: #{$string};
+ -o-animation: #{$string};
+ animation: #{$string};
+}
+
+@mixin border-radius($radius: $boxRadius) {
+ border-radius: $radius;
+ -moz-border-radius: $radius;
+ -webkit-border-radius: $radius;
+ -ms-border-radius: $radius;
+ -o-border-radius: $radius;
+}
+
+@mixin box-shadow($value, $value2: null, $value3: null, $value4: null) {
+ box-shadow: $value, $value2, $value3, $value4;
+ -moz-box-shadow: $value, $value2, $value3, $value4;
+ -webkit-box-shadow: $value, $value2, $value3, $value4;
+ -ms-box-shadow: $value, $value2, $value3, $value4;
+ -o-box-shadow: $value, $value2, $value3, $value4;
+}
+
+@mixin clear() {
+ &:before,
+ &:after { 
+ content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+ }
+ &:after {
+  clear: both;
+ } 
+}
+
+//CUSTOM MIXINS
+
+@mixin mage_gen {
+ max-width: 100%;
+}
+
+@mixin button_primary {
+  width: 60%;
+  text-transform: uppercase;
+    &:focus, &:active:focus, &.active:focus {
+      outline: 0 none;
+    }
+}
+@mixin vertical_center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+   align-items: center;
+}

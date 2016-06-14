@@ -1,0 +1,45 @@
+<div class="template_wrapper" id="tpl_schedule" ng-controller="scheduleController">
+     <div class="image_box">
+          <img src="images/logo/LCCs2016.png">
+     </div>
+     <div class="dates_slider row" >
+      <!-- <ul class="bxslider"> -->
+      <div class="align_center col-xs-{{12 / days.length}}" ng-repeat="item in days"><div  ng-click="filters.date = item.date">{{item.date}}</div></div>
+      <!-- </ul> -->
+     </div>
+      <div class="panel-group" id="accordion" >
+         <div class="panel panel-default" ng-init="filters.date = item.date[1]"  ng-repeat="item in agendas  | filter:filters">
+
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{$index}}">
+                  <strong class="col-xs-3 time_slot">{{item.time}}</strong>
+                  <strong class="col-xs-7 panel_name">{{item.panel_title}}</strong>
+                </a>
+              </h4>
+            </div>
+            <div id="collapse{{$index}}" class="panel-collapse collapse">
+              <div class="panel-body list">
+                  <div class="row" ng-show="item.location.length !== 0 ">
+                     <div class="col-xs-1"><i class="fa fa-map-marker"></i></div>
+                     <div class="col-xs-10 list_info">{{item.location}}</div>
+                  </div>
+                  <div class="row" ng-show="item.info.length !== 0 ">
+                     <div class="col-xs-1"><i class="fa fa-info-circle"></i></div>
+                     <div class="col-xs-10 list_info">{{item.info}}</div>
+                  </div>
+                  <div class="list" ng-show="item.moderator.length !== 0 ">
+                     <div class="list_ttl">Moderator</div>
+                     <div class="list_info"><strong>{{item.moderator}}</strong></div>
+                  </div>
+                   <div class="list" ng-show="item.speakers.length !== 0 ">
+                     <div class="list_ttl">Speakers</div>
+                     <div class="list_info" ng-repeat="speaker in item.speakers track by $index">
+                        <div><strong>{{speaker.company}}</strong>, {{speaker.job_title}}, {{speaker.name}}</div>
+                     </div>
+                  </div>
+              </div>
+            </div>
+         </div>
+      </div>
+</div>

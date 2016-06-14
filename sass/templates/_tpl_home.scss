@@ -1,0 +1,19 @@
+div.when_where {
+ margin-bottom: $margin_large_vertical;
+   > div {
+    margin-bottom: $margin_small;
+   }
+}
+.text_title {
+ margin-bottom: $margin_small;
+}
+.list {
+ padding-left:0px;
+  >li i {
+  margin-right: $margin_small;
+  }
+}
+
+.register_btn {
+ @include button_primary;
+}

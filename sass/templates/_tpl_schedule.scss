@@ -1,0 +1,110 @@
+#tpl_schedule .dates_slider div {
+ height: 50px;
+ margin-right: 0px!important;
+ padding:0px $padding-large-horizontal;
+ @include vertical_center;
+ font-size: $font-size-base;
+ font-weight: $headings-font-weight;
+  &:hover {
+   background-color: $brand-primary;
+   color:$body-bg;
+  }
+}
+#tpl_schedule.template_wrapper {
+ padding: 0px!important;
+}
+#tpl_schedule .bx-wrapper .bx-viewport {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  box-shadow-top: none;
+  border: none;
+  left: 0px;
+   &:before {
+    content: "";
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0px;
+    background-color: black;
+    width: 100%;
+   }
+}
+
+#tpl_schedule .dates_slider {
+   > div {
+      border-top: 1px solid gray;
+      border-bottom: 1px solid gray;
+   }
+   > div:not(:last-child) {
+      border-right: 1px solid $gray-light;
+   }
+}
+
+#tpl_schedule .image_box {
+ padding: $padding-large-horizontal;
+}
+
+#tpl_schedule .intro_text {
+    margin-top: -1px;
+  > h3 {
+    min-height: 40px;
+    outline: 0 none;
+    cursor: pointer;
+    padding: 0px 16px;
+    font-size:20px;
+    @include vertical_center;
+  }
+  >h3 strong {
+    text-align: left;
+    padding: 0px;
+  }
+}
+.agenda_gen {
+ padding: $padding-large-horizontal;
+}
+
+//ACCORDEON STYLES
+.panel-group {
+  margin-top: $margin_small;
+}
+.panel-heading {
+ cursor: pointer;
+ border-radius: $border-radius-none;
+  > h4 div {
+    cursor: pointer;
+  }
+}
+.panel_name {
+ font-size:$font-size-base;
+}
+.panel-title { 
+  min-height: 40px;
+  height: auto;
+  @include vertical_center;
+}
+.panel-body.list {
+   padding: $padding-large-horizontal;
+   > div.row, div.list {
+    padding: 0px;
+    margin-bottom: $margin_small;
+   }
+   > div.row i {
+     font-size: 20px;
+     color: $brand-primary;
+   }
+
+}
+.list_ttl {
+  color: $brand-primary;
+  font-weight: 600;
+
+}
+
+.list_ttl ~ .list_info {
+   padding-left: 0px;
+ }
+.list_info {
+   padding-right: 0px;
+ }

@@ -1,0 +1,38 @@
+var mainmenu =  [
+        {
+            "id": "schedule",
+            "title": "Schedule",
+            "href": "#/schedule",
+            "icon": "fa fa-calendar",
+            "li-class": "menu-element"
+        },
+        
+        {
+            "id": "speakers",
+            "title": "Speakers",
+            "href": "#/speakers",
+            "icon": "fa fa-microphone",
+            "li-class": "menu-element"
+        },
+        {
+            "id": "delegates",
+            "title": "Delegates",
+            "href": "#/delegates",
+            "icon": "fa fa-users",
+            "li-class": "menu-element"
+        },
+        {
+            "id": "venue",
+            "title": "Venue",
+            "href": "#/venue",
+            "icon": "fa fa-map-marker",
+            "li-class": "menu-element"
+        },
+        {
+            "id": "register",
+            "title": "Register",
+            "href": "#/register",
+            "icon": "fa fa-check",
+            "li-class": "menu-element"
+        }
+    ]

@@ -1,0 +1,126 @@
+#splash {
+ position: absolute;
+ top: 0;
+ right: 0;
+ left:0;
+ bottom: 0;
+ z-index: 9;
+ background-color: $brand-primary;
+   > .cloud.wrap {
+     
+      >img {
+       height: 100px;
+       position: relative;
+       -moz-animation-name: moveRight;
+       -moz-animation-iteration-count: infinite;
+       -moz-animation-timing-function: linear;
+       -moz-animation-duration: 15s;
+
+       -webkit-animation-name: moveRight;
+       -webkit-animation-iteration-count: infinite;
+       -webkit-animation-timing-function: linear;
+       -webkit-animation-duration: 15s;
+
+       animation-name: moveRight;
+       animation-iteration-count: infinite;
+       animation-timing-function: linear;
+       animation-duration: 15s;
+
+      }
+   }
+}
+
+.airport.wrap > img {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+.plane {
+ height: 50px;
+}
+
+.plane.taking_off {
+ position: absolute;
+
+ -moz-animation-name: takeOff;
+-moz-animation-iteration-count: infinite;
+-moz-animation-timing-function: linear;
+-moz-animation-duration: 30s;
+
+-webkit-animation-name: takeOff;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+-webkit-animation-duration: 30s;
+
+animation-name: takeOff;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-duration: 30s;
+}
+.logo.wrap > img {
+  height: 60px;
+}
+
+@-moz-keyframes moveRight {
+    0% {
+        -moz-transform: translateX(-150%);
+    }
+    100% {
+        -moz-transform: translateX(200%);
+    }
+}
+@-webkit-keyframes moveRight {
+    0% {
+        -webkit-transform: translateX(-150%);
+    }
+    100% {
+        -webkit-transform: translateX(200%);
+    }
+}
+@keyframes takeOff {
+    0% {
+        transform: translate(60px, 600px);
+    }
+    100% {
+        transform: translate(400px, 400px);
+    }
+}
+@-moz-keyframes takeOff {
+    0% {
+        -moz-transform:  translate(60px, 600px);
+    }
+    100% {
+        -moz-transform:  translate(400px, 400px);
+    }
+}
+@-webkit-keyframes takeOff {
+    0% {
+        -webkit-transform:  translate(60px, 600px);
+    }
+    100% {
+        -webkit-transform:  translate(400px, 400px);
+    }
+}
+@keyframes takeOff {
+    0% {
+        transform:  translate(60px, 600px);
+    }
+    100% {
+        transform:  translate(400px, 400px);
+    }
+}
+
+#flag-horizontal {
+ position: relative;
+ float: left;
+ width: 300px;
+ height: 100px;
+ background-repeat: no-repeat;
+}
+
+#flag-horizontal-canvas, #flag-vertical-canvas {
+ position: relative;
+ top: 40%;
+ left: 25%;
+}
+
