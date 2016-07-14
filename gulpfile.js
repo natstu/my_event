@@ -3,7 +3,18 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    server = require('gulp-server-livereload');
+
+var paths = {
+  sass: ['sass/*.scss']
+};
+
+gulp.task('default', ['compileSass', 'minifyScripts']);
+
+gulp.task('watch', function() {
+    gulp.watch(paths.sass, ['compileSass']);
+});
 
 gulp.task('concatScripts', function(){
  gulp.src(['js/jquery-1.11.3.min.js', 
@@ -12,7 +23,7 @@ gulp.task('concatScripts', function(){
            'js/angular/angular.js', 
            'js/angular-route/angular-route.js'
            ])
- .pipe(concat('libraries.js'))
+.pipe(concat('libraries.js'))
  .pipe(gulp.dest('js'));
 });
 
@@ -28,6 +39,11 @@ gulp.task("compileSass", function(){
   .pipe(sass())
   .pipe(gulp.dest('css'));
 });
-gulp.task('default', ['hello'], function(){
- console.log("This is the default task");
+gulp.task('webserver', function() {
+  gulp.src('event_offline')
+    .pipe(server({
+      livereload: true,
+      directoryListing: true,
+      open: true
+    }));
 });
